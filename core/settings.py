@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-niwb9abbnda@0^8e2(n+m@_vectz32c_)dfwgu(&pc_g8mdt&b
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['jandersonlira.pythonanywhere.com']
 
 
@@ -37,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'misscodajas',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,8 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['core/templates'],
+        # 'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,14 +120,16 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+# default static files settings for PythonAnywhere.
+# configurações
+MEDIA_ROOT = '/home/jandersonlira/core/media'
+MEDIA_URL = '/media/'
+STATIC_ROOT = '/home/jandersonlira/core/static'
+STATIC_URL = '/static/'
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# default static files settings for PythonAnywhere.
-# see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
-MEDIA_ROOT = '/home/jandersonlira/core/media'
-MEDIA_URL = '/media/'
-STATIC_ROOT = '/home/jandersonlira/core/static'
-STATIC_URL = '/static/'
+
